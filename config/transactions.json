@@ -1,0 +1,304 @@
+{
+  "transactions": [
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa1",
+      "sourceUserId": "00000000-0000-0000-0000-000000000001",
+      "destinationUserId": "00000000-0000-0000-0000-000000000002",
+      "sourceCurrency": "usdc",
+      "sourceAmount": 10.0,
+      "destinationCurrency": "usdt",
+      "outcome": "transferred",
+      "note": "valid — Alice has enough USDC"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa2",
+      "sourceUserId": "00000000-0000-0000-0000-000000000002",
+      "destinationUserId": "00000000-0000-0000-0000-000000000003",
+      "sourceCurrency": "usdt",
+      "sourceAmount": 25.5,
+      "destinationCurrency": "pyusd",
+      "outcome": "insufficient_funds",
+      "note": "Bob starts with 0 USDT"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa3",
+      "sourceUserId": "00000000-0000-0000-0000-000000000003",
+      "destinationUserId": "00000000-0000-0000-0000-000000000001",
+      "sourceCurrency": "pyusd",
+      "sourceAmount": 3.25,
+      "destinationCurrency": "usdc",
+      "outcome": "transferred",
+      "note": "valid — Carol has enough PYUSD"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa4",
+      "sourceUserId": "00000000-0000-0000-0000-000000000001",
+      "destinationUserId": "00000000-0000-0000-0000-000000000003",
+      "sourceCurrency": "usdc",
+      "sourceAmount": 999.99,
+      "destinationCurrency": "usdt",
+      "outcome": "insufficient_funds",
+      "note": "Alice only has 100 USDC"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa5",
+      "sourceUserId": "00000000-0000-0000-0000-000000000002",
+      "destinationUserId": "00000000-0000-0000-0000-000000000001",
+      "sourceCurrency": "usdt",
+      "sourceAmount": 0.01,
+      "destinationCurrency": "pyusd",
+      "outcome": "transferred",
+      "note": "valid — Bob received USDT from tx01"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa6",
+      "sourceUserId": "00000000-0000-0000-0000-000000000003",
+      "destinationUserId": "00000000-0000-0000-0000-000000000002",
+      "sourceCurrency": "pyusd",
+      "sourceAmount": 150.0,
+      "destinationCurrency": "usdc",
+      "outcome": "insufficient_funds",
+      "note": "Carol only has 12 PYUSD"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa7",
+      "sourceUserId": "00000000-0000-0000-0000-000000000001",
+      "destinationUserId": "00000000-0000-0000-0000-000000000002",
+      "sourceCurrency": "usdc",
+      "sourceAmount": 1.0,
+      "destinationCurrency": "pyusd",
+      "outcome": "transferred",
+      "note": "valid — Alice has plenty of USDC"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa8",
+      "sourceUserId": "00000000-0000-0000-0000-000000000002",
+      "destinationUserId": "00000000-0000-0000-0000-000000000003",
+      "sourceCurrency": "usdt",
+      "sourceAmount": 5000.0,
+      "destinationCurrency": "usdc",
+      "outcome": "insufficient_funds",
+      "note": "Bob has ~10 USDT, not 5000"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa9",
+      "sourceUserId": "00000000-0000-0000-0000-000000000003",
+      "destinationUserId": "00000000-0000-0000-0000-000000000001",
+      "sourceCurrency": "pyusd",
+      "sourceAmount": 42.42,
+      "destinationCurrency": "usdt",
+      "outcome": "insufficient_funds",
+      "note": "Carol only has 8.75 PYUSD after tx03"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa10",
+      "sourceUserId": "00000000-0000-0000-0000-000000000001",
+      "destinationUserId": "00000000-0000-0000-0000-000000000003",
+      "sourceCurrency": "usdc",
+      "sourceAmount": 7.77,
+      "destinationCurrency": "usdt",
+      "outcome": "transferred",
+      "note": "valid"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa11",
+      "sourceUserId": "00000000-0000-0000-0000-000000000001",
+      "destinationUserId": "00000000-0000-0000-0000-000000000099",
+      "sourceCurrency": "usdc",
+      "sourceAmount": 12.0,
+      "destinationCurrency": "usdt",
+      "outcome": "user_not_found",
+      "note": "destination user 099 does not exist"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa12",
+      "sourceUserId": "00000000-0000-0000-0000-000000000099",
+      "destinationUserId": "00000000-0000-0000-0000-000000000001",
+      "sourceCurrency": "usdt",
+      "sourceAmount": 8.0,
+      "destinationCurrency": "pyusd",
+      "outcome": "user_not_found",
+      "note": "source user 099 does not exist"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa13",
+      "sourceUserId": "00000000-0000-0000-0000-000000000002",
+      "destinationUserId": "00000000-0000-0000-0000-000000000003",
+      "sourceCurrency": "eur",
+      "sourceAmount": 10.0,
+      "destinationCurrency": "usdc",
+      "outcome": "invalid_input",
+      "note": "EUR is not a supported currency"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa14",
+      "sourceUserId": "00000000-0000-0000-0000-000000000003",
+      "destinationUserId": "00000000-0000-0000-0000-000000000002",
+      "sourceCurrency": "pyusd",
+      "sourceAmount": 10.0,
+      "destinationCurrency": "btc",
+      "outcome": "invalid_input",
+      "note": "BTC is not a supported currency"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa15",
+      "sourceUserId": "00000000-0000-0000-0000-000000000001",
+      "destinationUserId": "00000000-0000-0000-0000-000000000002",
+      "sourceCurrency": "usdc",
+      "sourceAmount": -5.0,
+      "destinationCurrency": "usdt",
+      "outcome": "invalid_input",
+      "note": "negative amount"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa16",
+      "sourceUserId": "00000000-0000-0000-0000-000000000002",
+      "destinationUserId": "00000000-0000-0000-0000-000000000003",
+      "sourceCurrency": "usdt",
+      "sourceAmount": -0.01,
+      "destinationCurrency": "pyusd",
+      "outcome": "invalid_input",
+      "note": "negative amount"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa17",
+      "sourceUserId": "00000000-0000-0000-0000-000000000003",
+      "destinationUserId": "00000000-0000-0000-0000-000000000001",
+      "sourceCurrency": "pyusd",
+      "sourceAmount": 0.0,
+      "destinationCurrency": "usdc",
+      "outcome": "invalid_input",
+      "note": "zero amount"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa18",
+      "sourceUserId": "00000000-0000-0000-0000-000000000001",
+      "destinationUserId": "00000000-0000-0000-0000-000000000003",
+      "sourceCurrency": "usdc",
+      "sourceAmount": 1000000.0,
+      "destinationCurrency": "usdt",
+      "outcome": "insufficient_funds",
+      "note": "way more than Alice has"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa19",
+      "sourceUserId": "00000000-0000-0000-0000-000000000002",
+      "destinationUserId": "00000000-0000-0000-0000-000000000001",
+      "sourceCurrency": "usdt",
+      "sourceAmount": 250000.75,
+      "destinationCurrency": "pyusd",
+      "outcome": "insufficient_funds",
+      "note": "Bob has ~10 USDT"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa20",
+      "sourceUserId": "00000000-0000-0000-0000-000000000003",
+      "destinationUserId": "00000000-0000-0000-0000-000000000002",
+      "sourceCurrency": "pyusd",
+      "sourceAmount": 0.0001,
+      "destinationCurrency": "usdc",
+      "outcome": "transferred",
+      "note": "valid — tiny dust amount"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa21",
+      "sourceUserId": "00000000-0000-0000-0000-000000000001",
+      "destinationUserId": "00000000-0000-0000-0000-000000000002",
+      "sourceCurrency": "usdc",
+      "sourceAmount": 63.0,
+      "destinationCurrency": "usdt",
+      "outcome": "transferred",
+      "note": "valid — Alice has ~84 USDC at this point"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa22",
+      "sourceUserId": "00000000-0000-0000-0000-000000000002",
+      "destinationUserId": "00000000-0000-0000-0000-000000000003",
+      "sourceCurrency": "usdt",
+      "sourceAmount": 88.88,
+      "destinationCurrency": "usdc",
+      "outcome": "insufficient_funds",
+      "note": "Bob has ~73 USDT at this point"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa23",
+      "sourceUserId": "00000000-0000-0000-0000-000000000003",
+      "destinationUserId": "00000000-0000-0000-0000-000000000001",
+      "sourceCurrency": "pyusd",
+      "sourceAmount": 17.0,
+      "destinationCurrency": "usdt",
+      "outcome": "insufficient_funds",
+      "note": "Carol has ~8.75 PYUSD at this point"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa24",
+      "sourceUserId": "00000000-0000-0000-0000-000000000001",
+      "destinationUserId": "00000000-0000-0000-0000-000000000003",
+      "sourceCurrency": "usdc",
+      "sourceAmount": 2.5,
+      "destinationCurrency": "pyusd",
+      "outcome": "transferred",
+      "note": "valid"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa25",
+      "sourceUserId": "00000000-0000-0000-0000-000000000002",
+      "destinationUserId": "00000000-0000-0000-0000-000000000001",
+      "sourceCurrency": "usdt",
+      "sourceAmount": 31.25,
+      "destinationCurrency": "pyusd",
+      "outcome": "transferred",
+      "note": "valid — Bob has ~73 USDT"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa05",
+      "sourceUserId": "00000000-0000-0000-0000-000000000002",
+      "destinationUserId": "00000000-0000-0000-0000-000000000001",
+      "sourceCurrency": "usdt",
+      "sourceAmount": 0.01,
+      "destinationCurrency": "pyusd",
+      "outcome": "transferred",
+      "note": "different txId from tx05 — tests that this is treated as a new transfer"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa11",
+      "sourceUserId": "00000000-0000-0000-0000-000000000001",
+      "destinationUserId": "00000000-0000-0000-0000-000000000099",
+      "sourceCurrency": "usdc",
+      "sourceAmount": 12.0,
+      "destinationCurrency": "usdt",
+      "outcome": "user_not_found",
+      "note": "same txId as tx11 — idempotency test; API should return cached result, provider replays its cached result if it ever sees it again"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa15",
+      "sourceUserId": "00000000-0000-0000-0000-000000000001",
+      "destinationUserId": "00000000-0000-0000-0000-000000000002",
+      "sourceCurrency": "usdc",
+      "sourceAmount": -5.0,
+      "destinationCurrency": "usdt",
+      "outcome": "invalid_input",
+      "note": "same txId as tx15 — idempotency test; API should return cached result without re-processing"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa26",
+      "sourceUserId": "00000000-0000-0000-0000-000000000098",
+      "destinationUserId": "00000000-0000-0000-0000-000000000097",
+      "sourceCurrency": "usdc",
+      "sourceAmount": 55.0,
+      "destinationCurrency": "usdt",
+      "outcome": "user_not_found",
+      "note": "both users 097 and 098 do not exist"
+    },
+    {
+      "transactionId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa03",
+      "sourceUserId": "00000000-0000-0000-0000-000000000003",
+      "destinationUserId": "00000000-0000-0000-0000-000000000001",
+      "sourceCurrency": "pyusd",
+      "sourceAmount": 3.25,
+      "destinationCurrency": "usdc",
+      "outcome": "transferred",
+      "note": "different txId from tx03 — Carol still has enough PYUSD"
+    }
+  ]
+}

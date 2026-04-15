@@ -1,0 +1,73 @@
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "3333:3000"
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+    environment:
+      DATABASE_URL: postgres://user:pass@postgres:5432/hifi
+      PROVIDER_WS_URL: ws://provider-sim:4000
+    depends_on:
+      - postgres
+      - provider-sim
+
+  provider-sim:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    command: npx tsx src/provider-sim/server.ts
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+      - ./config:/config
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    depends_on:
+      - api
+    environment:
+      TARGET_URL: http://api:3000
+      PROVIDER_URL: http://provider-sim:4000
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ./config:/config
+    command: python worker.py
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: hifi
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d
+
+  pgadmin:
+    image: dpage/pgadmin4:9.14.0
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@hifi.com
+      PGADMIN_DEFAULT_PASSWORD: pass
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      - ./pgadmin/servers.json:/pgadmin4/servers.json
+
+volumes:
+  postgres_data:
+  pgadmin_data:
