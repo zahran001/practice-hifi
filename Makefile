@@ -1,11 +1,11 @@
 .PHONY: up down client reset
 
 up:
-	docker rm -f hifi_interview-client-1 2>/dev/null || true
+	docker ps -aq --filter name=client | xargs -r docker rm -f
 	docker compose up --build -d
 
 down:
-	docker rm -f hifi_interview-client-1 2>/dev/null || true
+	docker ps -aq --filter name=client | xargs -r docker rm -f
 	docker compose down -v --remove-orphans
 
 client:
