@@ -11,10 +11,10 @@ The client, the payment provider, and the test harness are all already running. 
 ## Getting Started
 
 ```bash
-docker compose up --build -d
+make up
 ```
 
-This starts four background services:
+This builds all images and starts four background services:
 
 | Service | What it does |
 |---|---|
@@ -30,7 +30,7 @@ The server hot-reloads on save via `tsx watch`, so you don't need to restart Doc
 When you're ready to test your implementation, run the client in a separate terminal:
 
 ```bash
-docker compose up client
+make client
 ```
 
 The client sends transfer requests every 2 seconds, then automatically runs a balance audit and prints `[PASS]` / `[FAIL]` results.
@@ -40,8 +40,16 @@ The client sends transfer requests every 2 seconds, then automatically runs a ba
 To restore all user balances to their starting values and clear the transactions table:
 
 ```bash
-docker compose up reset_db
+make reset
 ```
+
+### Tearing down
+
+```bash
+make down
+```
+
+Stops all containers, removes volumes, and cleans up any orphaned containers.
 
 ---
 
