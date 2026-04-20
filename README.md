@@ -11,10 +11,10 @@ The client, the payment provider, and the test harness are all already running. 
 ## Getting Started
 
 ```bash
-docker compose up --build
+docker compose up --build -d
 ```
 
-This starts five services:
+This starts four background services:
 
 | Service | What it does |
 |---|---|
@@ -22,9 +22,26 @@ This starts five services:
 | `postgres` | PostgreSQL database (`localhost:5432`) |
 | `pgadmin` | Database admin UI (`localhost:5050`) |
 | `provider-sim` | Simulated payment provider — **do not modify** |
-| `client` | Sends test transfers every 2 seconds, then audits results |
 
 The server hot-reloads on save via `tsx watch`, so you don't need to restart Docker while working.
+
+### Running the test client
+
+When you're ready to test your implementation, run the client in a separate terminal:
+
+```bash
+docker compose up client
+```
+
+The client sends transfer requests every 2 seconds, then automatically runs a balance audit and prints `[PASS]` / `[FAIL]` results.
+
+### Resetting the database
+
+To restore all user balances to their starting values and clear the transactions table:
+
+```bash
+docker compose up reset_db
+```
 
 ---
 

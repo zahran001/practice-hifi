@@ -1,0 +1,10 @@
+UPDATE users SET usdc = 100.00000000, usdt = 50.00000000, pyusd = 25.00000000 WHERE userid = '00000000-0000-0000-0000-000000000001';
+UPDATE users SET usdc = 10.50000000, usdt = 0.00000000, pyusd = 5.25000000 WHERE userid = '00000000-0000-0000-0000-000000000002';
+UPDATE users SET usdc = 0.00000000, usdt = 75.00000000, pyusd = 12.00000000 WHERE userid = '00000000-0000-0000-0000-000000000003';
+
+DO $$
+BEGIN
+  IF EXISTS (SELECT FROM information_schema.tables WHERE table_name = 'transactions') THEN
+    TRUNCATE transactions;
+  END IF;
+END $$;

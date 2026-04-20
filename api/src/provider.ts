@@ -22,6 +22,11 @@ import { TransferRequestBody } from "./types";
 //   providerTransfer(opts);
 // ---------------------------------------------------------------------------
 
+export type ProviderEvent =
+  | { event: "received"; transactionId: string }
+  | { event: "transferred"; transactionId: string }
+  | { event: "failed"; transactionId: string; reason: string };
+
 export const providerEvents = new EventEmitter();
 
 export function providerTransfer(opts: TransferRequestBody): void {
@@ -56,7 +61,7 @@ function connect() {
   });
 
   ws.on("message", (raw) => {
-    let msg: { event: string; transactionId: string; reason?: string };
+    let msg: ProviderEvent;
     try {
       msg = JSON.parse(raw.toString());
     } catch {
