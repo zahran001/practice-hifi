@@ -38,3 +38,14 @@ VALUES
   75.00000000, 
   12.00000000
 );
+
+CREATE TABLE IF NOT EXISTS transactions (
+  transactionid UUID PRIMARY KEY,
+  sourceuserid UUID NOT NULL,
+  destinationuserid UUID NOT NULL,
+  sourcecurrency TEXT NOT NULL,
+  sourceamount NUMERIC(20,8) NOT NULL,
+  destinationcurrency TEXT NOT NULL,
+  status TEXT NOT NULL,
+  createdat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

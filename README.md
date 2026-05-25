@@ -203,5 +203,6 @@ When the client finishes sending all requests it will automatically run a balanc
 
 The audit output will show `[PASS]` or `[FAIL]` per user per currency, plus timing. A correct implementation passes all checks.
 
+## Output
 <img width="5760" height="2160" alt="image" src="https://github.com/user-attachments/assets/4a949e14-9bdf-41da-9f23-52a99e32930f" />
 
